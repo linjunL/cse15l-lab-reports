@@ -26,6 +26,21 @@ Horizontal rule:
 
 'Thank you' for your reading!
 
+I **have to** add somethig else here. 
+
+```
+# Some code
+Print '123'
+print '321'
+```
+
+
+# Super Cool:
+---
+1. yes
+2. no
+
+
 
 
 

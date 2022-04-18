@@ -17,6 +17,11 @@
 
 * ## Trying some Commands
     1. Running all thoese commands on the remote computer after ssh-ing
+    `cd ~`
+    `cd`
+    `ls -lat`
+    `ls -a`
+    `ls <directory> ` where `<directory> `is `/home/linux/ieng6/cs15lsp22/cs15lsp22abc`
     ![Image](command.png)
     2. Run the commmand `exit` to run thoese commands on my computer
     ![Image](com1.png)
@@ -29,7 +34,18 @@
     * mkdir – make new directory
 
 * ## Moving Files with `scp`
-    1. Create a file on computer called `WhereAmI.java` and put contents into it. Then run `javac` and `java`. This is what I got.
+    1. Create a file on computer called `WhereAmI.java` and put contents into it. 
+    ```
+    class WhereAmI {
+        public static void main(String[] args) {
+            System.out.println(System.getProperty("os.name"));
+            System.out.println(System.getProperty("user.name"));
+            System.out.println(System.getProperty("user.home"));
+            System.out.println(System.getProperty("user.dir"));
+        }
+    }
+    ```
+    And then run `javac` and `java`. This is what I got.
     ![Image](javac.png)
     2. Run the command `scp WhereAmI.java cs15lsp22zz@ieng6.ucsd.edu:~/` (replace zz to your account name) and enter the password. Then log into ieng6 with ssh again and ues `ls`. Now I can run `javac` and `java` on the ieng6 computer.
     ![Image](where.png)
@@ -38,11 +54,13 @@
     1. get a new terminal, then type command `$ ssh-keygen`, then type ` / /Users/liulinyun/.ssh/id_rsa` and then type the password for logging in the ieng6. After all, we don't have to type password when we want to log in the `ssh` and `scp`.
     ![Image](password.png)
     2. Now cope the public key to the `.ssh` directory of your user account on the server:
-      `$ssh cs15lsp22agq@ieng6.ucsd.edu`
-      `<Enter Password>`
-      `$ mkdir .ssh`
-      `<logout>`
-      `scp /Users/liulinyun/.ssh/id_rsa.pub cs15lsp22aqg@ieng6.ucsd.edu:~/.ssh/authorized_keys`
+    ```
+    $ssh cs15lsp22agq@ieng6.ucsd.edu
+    <Enter Password>
+    $ mkdir .ssh
+    <logout>
+    scp /Users/liulinyun/.ssh/id_rsa.pub cs15lsp22aqg@ieng6.ucsd.edu:~/.ssh/authorized_keys
+    ```
       ![Image](pass2.png)
     3. Let verify it
       * verify if I am able to ssh from this client to the server without entering my password.

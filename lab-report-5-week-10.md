@@ -9,7 +9,7 @@
 >Provide a link to the test-file with TWO different-results
 
 - This is my [first test-file link](https://github.com/nidhidhamnani/markdown-parser/blob/main/test-files/510.html.test) (tests-file 510.md)
-- This is my [second test-file link](https://github.com/nidhidhamnani/markdown-parser/blob/main/test-files/489.html.test)
+- This is my [second test-file link](https://github.com/nidhidhamnani/markdown-parser/blob/main/test-files/489.html.test)(test-files/489.md)
 
 >Describe which implementation is correct, or neither if both give the wrong output 
 
@@ -42,7 +42,7 @@
 - For this bug, I am not fix it.
 - This high light part is the bug, since the test 489 is `<p>[link](foo`
 
-    `bar)</p>`. There is a new line between the foo and bar. So if the code go throgh the high light part will directly show what is look like which case the erro. If I want to fix this bug, I need to write a helper method that get the index for the new line by `link.charAt(index) == '\n'`. After that, we can use for loop to rewrite the foo bar without the new line and add a space.
+    `bar)</p>`. There is a new line between the foo and bar. So if the code go throgh the high light part will directly show what is look like which case the erro. If I want to fix this bug, I need to write a helper method that get the index for the new line by `link.charAt(index) == '\n'`. After that, we can use for loop to rewrite the foo bar without the new line and replace the new line with a space.
 
 
 
